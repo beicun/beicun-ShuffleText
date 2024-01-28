@@ -11,7 +11,7 @@
 
 ## Get started
 
-````
+````html
 <p class="text">ABOUT THIS WEBSITE</p>
 <p class="box"></p>
 <p class="button is-start"><button>start()</button></p>
