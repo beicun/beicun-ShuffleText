@@ -7,15 +7,15 @@ class ShuffleText {
   /**
    * コンストラクタ
    */
-	constructor(element, fps = 30, duration = 300) {
+  constructor(element, fps = 30, duration = 300) {
     this.textElement = element;
-		this.originalText = element.textContent;
+    this.originalText = element.textContent;
     this.duration = duration;
-		// this.FPS = fps;
+    // this.FPS = fps;
     // this.DEF = Math.floor(1000 / this.FPS);
-		this.requestAnimationFrameId = 0;
+    this.requestAnimationFrameId = 0;
     this.startTime;
-		this.isReverse = false;
+    this.isReverse = false;
     // ランダム文字列
     this.randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
     this.floatIndexes = this.originalText.split('').map((randomChar, index) => {
@@ -24,39 +24,39 @@ class ShuffleText {
       return Math.random() * (1 - rate) + rate;
     });
     element.textContent = '';
-	}
+  }
   
-	/**
-	 * 順方向のアニメーションを実行
-	 */
-	start() {
-		console.log('start');
+  /**
+   * 順方向のアニメーションを実行
+   */
+  start() {
+    console.log('start');
     cancelAnimationFrame(this.requestAnimationFrameId);
     this.startTime = Date.now();
-		this.isReverse = false;
-    // 描画のアニメーションを実行
-    this.requestAnimationFrameId = requestAnimationFrame(() => {
-			this.onInterval();
-		});
-	}
-
-	/**
-	 * 逆方向のアニメーションを実行
-	 */
-	reverse() {
-		console.log('reverse');
-    cancelAnimationFrame(this.requestAnimationFrameId);
-    this.startTime = Date.now();
-		this.isReverse = true;
+    this.isReverse = false;
     // 描画のアニメーションを実行
     this.requestAnimationFrameId = requestAnimationFrame(() => {
       this.onInterval();
     });
-	}
+  }
+
+  /**
+   * 逆方向のアニメーションを実行
+   */
+  reverse() {
+    console.log('reverse');
+    cancelAnimationFrame(this.requestAnimationFrameId);
+    this.startTime = Date.now();
+    this.isReverse = true;
+    // 描画のアニメーションを実行
+    this.requestAnimationFrameId = requestAnimationFrame(() => {
+      this.onInterval();
+    });
+  }
   
   /**
-	 * アニメーションを定義
-	 */
+   * アニメーションを定義
+   */
   onInterval() {
     this.requestAnimationFrameId = requestAnimationFrame(() => {
       this.onInterval();
@@ -116,13 +116,13 @@ class ShuffleText {
     }
   }
   
-	/**
-	 * ランダムなテキストを返す
-	 * @param {Array} _randomChars ランダムな文字を要素とする配列
-	 * @param {int} length 生成したい文字数
-	 * @param {int} prefixLength 生成するテキストの先頭何文字を、オリジナルテキストとするか
-	 * @returns {String}
-	 */
+  /**
+   * ランダムなテキストを返す
+   * @param {Array} _randomChars ランダムな文字を要素とする配列
+   * @param {int} length 生成したい文字数
+   * @param {int} prefixLength 生成するテキストの先頭何文字を、オリジナルテキストとするか
+   * @returns {String}
+   */
   getRandomText(_randomChars, length, prefixLength) {
     let newRandomText = ''; // ランダム文字列を格納
     if (prefixLength) {
