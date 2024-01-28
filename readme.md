@@ -3,7 +3,7 @@
 ## Introduction
 
 中村勇吾さんと池田泰延さんのテキストをシャッフルするアニメーションが好きで、似たようなアニメーション及び自分に必要な機能を備えたライブラリを作っている次第です。
-コードは池田泰延さんの[https://github.com/ics-ikeda/shuffle-text](ShuffleText)を参考にしました。
+コードは池田泰延さんの[ShuffleText](https://github.com/ics-ikeda/shuffle-text)を参考にしました。
 
 ## Demo
 
