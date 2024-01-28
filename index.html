@@ -1,16 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="ja" >
 <head>
-  <meta charset="UTF-8">
-  <title>CodePen - new</title>
-  <link rel='stylesheet' href='https://db.onlinewebfonts.com/c/86203afc717c0d2960e0b34fd4041e95?family=Ticking+Timebomb+BB'>
-  <link rel="stylesheet" href="./style.css">
+<meta charset="UTF-8">
+<title>beicun's ShuffleText</title>
+<link rel='stylesheet' href='https://db.onlinewebfonts.com/c/86203afc717c0d2960e0b34fd4041e95?family=Ticking+Timebomb+BB'>
+<link rel="stylesheet" href="./style.css">
+<script  src="./beicun-ShuffleText.js"></script>
 </head>
 <body>
-<p class="text">ABOUT THIS WEBSITE</p>
-<p class="box"></p>
+<p class="text">BEICUN'S SHUFFLE-TEXT</p>
 <p class="button is-start"><button>start()</button></p>
 <p class="button is-end"><button>reverse()</button></p>
-<script  src="./script.js"></script>
+<script>
+const element = document.querySelector('.text');
+const st = new ShuffleText(element);
+const startButton = document.querySelector('.button.is-start');
+startButton.addEventListener('click', () => {
+  st.start();
+});
+const endButton = document.querySelector('.button.is-end');
+endButton.addEventListener('click', () => {
+  st.reverse();
+});
+</script>
 </body>
 </html>

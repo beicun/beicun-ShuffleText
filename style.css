@@ -1,21 +1,32 @@
+:root {
+  --mainColor: #295129;
+  --subColor: #2fad2f;
+}
+
 body {
   font-family: "Ticking Timebomb BB";
   font-style: italic;
 }
 
 .text {
-  font-size: 20px;
-  height: 20px;
+  height: 32px;
+  width: auto;
+  font-size: 32px;
   letter-spacing: 0.1em;
+  color: var(--mainColor);
+  background: linear-gradient(90deg, var(--subColor), var(--mainColor));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 .box2 {
+  width: 0%;
   height: 10px;
   background: #ccc;
-  width: 0%;
 }
 
 button {
-  text-align: center;
   width: 200px;
+  text-align: center;
 }

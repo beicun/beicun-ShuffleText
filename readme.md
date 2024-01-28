@@ -12,25 +12,23 @@
 ## Get started
 
 ````html
-<p class="text">ABOUT THIS WEBSITE</p>
+<head>
+<link rel="stylesheet" href="./style.css">
+<script  src="./beicun-ShuffleText.js"></script>
+</head>
+<body>
+<p class="text">BEICUN'S SHUFFLE-TEXT</p>
 <p class="button is-start"><button>start()</button></p>
 <p class="button is-end"><button>reverse()</button></p>
-
 <script>
-// テキストの包含要素を取得
 const element = document.querySelector('.text');
-// インタスタンスを生成
 const st = new ShuffleText(element);
-
 const startButton = document.querySelector('.button.is-start');
 startButton.addEventListener('click', () => {
-  // テキストが増えていく
   st.start();
 });
-
 const endButton = document.querySelector('.button.is-end');
 endButton.addEventListener('click', () => {
-  // テキストが減っていく
   st.reverse();
 });
 </script>

@@ -146,14 +146,3 @@ class ShuffleText {
     return newRandomText;
   }
 }
-
-const element = document.querySelector('.text');
-const st = new ShuffleText(element);
-const startButton = document.querySelector('.button.is-start');
-startButton.addEventListener('click', () => {
-  st.start();
-});
-const endButton = document.querySelector('.button.is-end');
-endButton.addEventListener('click', () => {
-  st.reverse();
-});
