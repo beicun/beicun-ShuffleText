@@ -13,7 +13,7 @@
 
 ````html
 <head>
-<link rel="stylesheet" href="./style.css">
+<link href="./style.css">
 <script  src="./beicun-ShuffleText.js"></script>
 </head>
 <body>
